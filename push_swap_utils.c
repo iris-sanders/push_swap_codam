@@ -5,18 +5,38 @@
 /*                                                     +:+                    */
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/04/05 18:28:34 by isanders      #+#    #+#                 */
-/*   Updated: 2023/04/05 18:28:51 by isanders      ########   odam.nl         */
+/*   Created: 2023/04/19 14:01:31 by isanders      #+#    #+#                 */
+/*   Updated: 2023/04/19 17:31:33 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi(const char *str)
+void	ft_error(char *str)
+{
+	ft_putstr_fd(str, STDERR_FILENO);
+	exit(EXIT_FAILURE);
+}
+
+static int	min_max_int(long long number)
+{
+	int	max;
+	int min;
+
+	max = 2147483647;
+	min = -2147483648;
+	if (number > max)
+		return (max);
+	else if (number < min)
+		return (min);
+	return (1);
+	
+}
+int	atoi_min_max(const char *str)
 {
 	int	i;
 	int	neg_number;
-	int	number;
+	long long	number;
 
 	i = 0;
 	neg_number = 1;
@@ -36,5 +56,7 @@ int	ft_atoi(const char *str)
 		number = number * 10 + (str[i] - '0');
 		i++;
 	}
+	if (min_max_int(number * neg_number) != 1)
+		return (min_max_int(number * neg_number));
 	return (number * neg_number);
 }

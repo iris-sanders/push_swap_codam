@@ -6,15 +6,16 @@
 #    By: isanders <isanders@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/04/03 16:19:13 by isanders      #+#    #+#                  #
-#    Updated: 2023/04/12 15:35:41 by isanders      ########   odam.nl          #
+#    Updated: 2023/04/19 14:12:05 by isanders      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-SRC = 	push_swap.c \
-		push_swap_utils.c \
+SRC = 	main.c \
+		input_check.c \
 		create_list.c \
 		tester.c \
+		push_swap_utils.c \
 		
 HEADER = -I ./libft/libft.h -I ./libft/ft_printf/ft_printf.h
 
