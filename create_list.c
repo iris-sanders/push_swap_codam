@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/07 16:04:52 by isanders      #+#    #+#                 */
-/*   Updated: 2023/04/14 11:19:11 by isanders      ########   odam.nl         */
+/*   Updated: 2023/04/20 13:55:33 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_node	*create_new_node(int number)
 {
-	t_node *new_node;
-	
+	t_node	*new_node;
+
 	new_node = malloc(sizeof(t_node));
 	if (new_node == NULL)
 		return (NULL);
@@ -26,13 +26,13 @@ t_node	*create_new_node(int number)
 
 t_node	*create_list_a(char **argv)
 {
-	int i;
-	int	number;
-	t_node *head;
-	t_node *new_node;
-	t_node *link;
+	int		i;
+	int		number;
+	t_node	*head;
+	t_node	*new_node;
+	t_node	*link;
 
-	i = 1; 
+	i = 1;
 	number = 0;
 	head = NULL;
 	while (argv[i] != NULL)
@@ -50,5 +50,5 @@ t_node	*create_list_a(char **argv)
 		}
 		i++;
 	}
-	return(head);
+	return (head);
 }

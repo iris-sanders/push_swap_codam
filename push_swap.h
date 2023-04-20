@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/30 19:13:45 by isanders      #+#    #+#                 */
-/*   Updated: 2023/04/19 17:29:49 by isanders      ########   odam.nl         */
+/*   Updated: 2023/04/20 14:00:29 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ int		input_is_number(char *argv);
 int		check_valid_input(char **argv);
 void	ft_error(char *str);
 int		duplicate_check(int argc, char **argv);
-int		atoi_min_max(const char *str);
+int		atoi_min_max(char *str);
 
 #endif

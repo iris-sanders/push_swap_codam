@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/06 13:01:08 by isanders      #+#    #+#                 */
-/*   Updated: 2023/04/03 16:01:27 by isanders      ########   odam.nl         */
+/*   Updated: 2023/04/20 13:56:13 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	ft_printf(const char *s, ...)
 // {	
 // 	int	num = 42;
 // 	int	*ptr = &num;
-	
+
 // 	printf("character original: %c\n", 'a');
 // 	ft_printf("character self: %c\n\n", 'a');
 
