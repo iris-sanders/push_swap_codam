@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/30 19:07:40 by isanders      #+#    #+#                 */
-/*   Updated: 2023/04/21 11:46:23 by isanders      ########   odam.nl         */
+/*   Updated: 2023/04/25 14:33:23 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	main(int argc, char **argv)
 {
+	t_node	*head_a;
 	int number;
 	int	i;
 	
@@ -30,7 +31,13 @@ int	main(int argc, char **argv)
 				else
 					i++;
 			}
-			print_list(argv);
+			ft_printf("original list\n");
+			head_a = create_list_a(argv);
+			print_list(head_a);
+			ft_printf("updated list\n");
+			sa(&head_a);
+			print_list(head_a);
+			
 		}
 	else
 		ft_error("ERROR: invalid input\n");

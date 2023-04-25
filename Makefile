@@ -6,7 +6,7 @@
 #    By: isanders <isanders@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/04/03 16:19:13 by isanders      #+#    #+#                  #
-#    Updated: 2023/04/21 16:17:37 by isanders      ########   odam.nl          #
+#    Updated: 2023/04/25 14:32:47 by isanders      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ SRC = 	main.c \
 		create_list.c \
 		tester.c \
 		push_swap_utils.c \
+		swap_functions.c \
 		
 HEADER = -I ./libft/libft.h -I ./libft/ft_printf/ft_printf.h
 

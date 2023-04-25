@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/07 16:04:52 by isanders      #+#    #+#                 */
-/*   Updated: 2023/04/20 13:55:33 by isanders      ########   odam.nl         */
+/*   Updated: 2023/04/25 13:53:38 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,27 +28,27 @@ t_node	*create_list_a(char **argv)
 {
 	int		i;
 	int		number;
-	t_node	*head;
+	t_node	*head_a;
 	t_node	*new_node;
 	t_node	*link;
 
 	i = 1;
 	number = 0;
-	head = NULL;
+	head_a = NULL;
 	while (argv[i] != NULL)
 	{
 		number = ft_atoi(argv[i]);
 		if (i == 1)
-			head = create_new_node(number);
+			head_a = create_new_node(number);
 		else
 		{
 			new_node = create_new_node(number);
-			link = head;
+			link = head_a;
 			while (link->next != NULL)
 				link = link->next;
 			link->next = new_node;
 		}
 		i++;
 	}
-	return (head);
+	return (head_a);
 }
