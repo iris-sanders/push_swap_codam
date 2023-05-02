@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/30 19:13:45 by isanders      #+#    #+#                 */
-/*   Updated: 2023/04/25 14:32:04 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/02 18:07:18 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int		check_valid_input(char **argv);
 void	ft_error(char *str);
 int		duplicate_check(int argc, char **argv);
 int		atoi_min_max(char *str);
-void	sa(t_node **head);
+void	swap(t_node **head);
+void	push(t_node **head_a, t_node **head_b);
 
 #endif
