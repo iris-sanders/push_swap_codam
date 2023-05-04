@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/30 19:13:45 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/02 18:07:18 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/04 16:31:15 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ int		duplicate_check(int argc, char **argv);
 int		atoi_min_max(char *str);
 void	swap(t_node **head);
 void	push(t_node **head_a, t_node **head_b);
+void	rotate(t_node **head);
 
 #endif

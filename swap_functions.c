@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/24 15:38:26 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/02 18:05:48 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/04 16:37:28 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,22 @@ void	push(t_node **head_a, t_node **head_b)
 	(*head_b) = (*head_a);
 	//head a is temp (wat voorheen de 2e node was)
 	(*head_a) = temp;
+}
+
+void	rotate(t_node **head)
+{
+	t_node	*last;
+	t_node	*first;
+
+	if (*head == NULL || (*head)->next == NULL)
+		exit(EXIT_FAILURE);
+	last = *head;
+	while (last->next != NULL)
+	{
+		last = last->next;
+	}
+	first = *head;
+	*head = (*head)->next;
+	first->next = NULL;
+	last->next = first;
 }
