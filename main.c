@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/30 19:07:40 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/04 16:33:57 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/07 13:51:04 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,25 @@ int	main(int argc, char **argv)
 			}
 			head_a = create_list_a(argv);
 			head_b = NULL;
-			ft_printf("original list\n");
+			ft_printf("original head a\n");
 			print_list(head_a);
-			ft_printf("updated list\n");
-			rotate(&head_a);
+			ft_printf("\n");
+			ft_printf("original head b\n");
+			print_list(head_b);
+			ft_printf("\n");
+			push_b(&head_a, &head_b);
+			push_b(&head_a, &head_b);
+			ft_printf("updated head a\n");
 			print_list(head_a);
+			ft_printf("updated head b\n");
+			print_list(head_b);
+			ft_printf("\n");
+			ft_printf("reverse rotate a:\n");
+			swap_a_and_b(&head_a, &head_b);
+			print_list(head_a);
+			ft_printf("\n");
+			ft_printf("reverse rotate b: \n");
+			print_list(head_b);
 		}
 	else
 		ft_error("ERROR: invalid input\n");

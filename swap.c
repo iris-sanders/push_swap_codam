@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   swap_functions.c                                   :+:    :+:            */
+/*   swap.c                                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/24 15:38:26 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/04 16:37:28 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/07 13:50:21 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,36 +29,22 @@ void	swap(t_node **head)
 	//make head point to the first node again
 	(*head) = second;
 }
-void	push(t_node **head_a, t_node **head_b)
+
+void	swap_a(t_node **head_a)
 {
-	t_node	*temp;
-	
-	if ((*head_a) == NULL)
-		exit(EXIT_FAILURE);
-	//sla de hele 2e node van head_a op in temp
-	temp = (*head_a)->next;
-	//de eerste node(next) van stack_a wijst naar de eerste node van stack_b
-	(*head_a)->next = (*head_b);
-	//de eerste node van stack b is nu de eerste node van stack a
-	(*head_b) = (*head_a);
-	//head a is temp (wat voorheen de 2e node was)
-	(*head_a) = temp;
+	swap(head_a);
+	ft_printf("sa\n");
 }
 
-void	rotate(t_node **head)
+void	swap_b(t_node **head_b)
 {
-	t_node	*last;
-	t_node	*first;
+	swap(head_b);
+	ft_printf("sb\n");
+}
 
-	if (*head == NULL || (*head)->next == NULL)
-		exit(EXIT_FAILURE);
-	last = *head;
-	while (last->next != NULL)
-	{
-		last = last->next;
-	}
-	first = *head;
-	*head = (*head)->next;
-	first->next = NULL;
-	last->next = first;
+void	swap_a_and_b(t_node **head_a, t_node **head_b)
+{
+	swap(head_a);
+	swap(head_b);
+	ft_printf("ss\n");
 }

@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   tester.c                                           :+:    :+:            */
+/*   push.c                                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/04/07 16:06:18 by isanders      #+#    #+#                 */
-/*   Updated: 2023/04/25 14:26:54 by isanders      ########   odam.nl         */
+/*   Created: 2023/05/07 12:18:16 by isanders      #+#    #+#                 */
+/*   Updated: 2023/05/07 12:31:10 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	print_list(t_node *head_a)
+void	push(t_node **head_a, t_node **head_b)
 {
-	t_node	*link;
+	t_node	*temp;
 	
-	link = head_a;
-	while (link != NULL)
-	{
-		ft_printf("%i\n", link->value);
-		link = link->next;
-	}
-	return (0);
+	if ((*head_a) == NULL)
+		exit(EXIT_FAILURE);
+	temp = (*head_a)->next;
+	(*head_a)->next = (*head_b);
+	(*head_b) = (*head_a);
+	(*head_a) = temp;
+}
+
+void	push_a(t_node **head_b, t_node **head_a)
+{
+	push(head_b, head_a);
+	ft_printf("pa\n");
+}
+
+void	push_b(t_node **head_a, t_node **head_b)
+{
+	push(head_a, head_b);
+	ft_printf("pb\n");
 }

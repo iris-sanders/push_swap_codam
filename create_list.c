@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/07 16:04:52 by isanders      #+#    #+#                 */
-/*   Updated: 2023/04/25 13:53:38 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/07 13:54:08 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,17 @@ t_node	*create_list_a(char **argv)
 		i++;
 	}
 	return (head_a);
+}
+
+int	print_list(t_node *head)
+{
+	t_node	*link;
+	
+	link = head;
+	while (link != NULL)
+	{
+		ft_printf("%i\n", link->value);
+		link = link->next;
+	}
+	return (0);
 }
