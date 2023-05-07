@@ -6,7 +6,7 @@
 #    By: isanders <isanders@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/04/03 16:19:13 by isanders      #+#    #+#                  #
-#    Updated: 2023/05/07 13:53:35 by isanders      ########   odam.nl          #
+#    Updated: 2023/05/07 17:22:59 by isanders      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRC = 	main.c \
 		push.c \
 		rotate.c \
 		reverse_rotate.c \
+		sort.c \
 		
 HEADER = -I ./libft/libft.h -I ./libft/ft_printf/ft_printf.h
 

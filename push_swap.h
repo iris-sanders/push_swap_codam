@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/30 19:13:45 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/07 16:02:12 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/07 17:22:47 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ void	reverse_rotate(t_node **head);
 void	reverse_rotate_a(t_node **head_a);
 void	reverse_rotate_b(t_node **head_b);
 void	reverse_rotate_a_and_b(t_node **head_a, t_node **head_b);
+int		count_nodes(t_node **head);
 
 #endif

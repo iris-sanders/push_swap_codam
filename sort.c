@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.c                                             :+:    :+:            */
+/*   sort.c                                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/03/30 19:07:40 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/07 17:22:34 by isanders      ########   odam.nl         */
+/*   Created: 2023/05/07 17:13:49 by isanders      #+#    #+#                 */
+/*   Updated: 2023/05/07 17:28:11 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int	count_nodes(t_node **head)
 {
-	t_node	*head_a;
-	t_node	*head_b;
+	int		count;
+	t_node	*last;
 	
-	if (argc < 2)
-		return (0);
-	if (is_correct_input(argc, argv) != 0)
-		ft_error("ERROR: input not correct\n");
-	head_b = NULL;
-	head_a = create_list_a(argv);
-	count_nodes(&head_a);
-	// ft_printf("original head a\n");
-	// print_list(head_a);
-	// ft_printf("\n");
-	// ft_printf("original head b\n");
-	// print_list(head_b);
+	count = 0;
+	if (*head == NULL || (*head)->next == NULL)
+		exit(EXIT_FAILURE);
+	last = *head;
+	while (last != NULL)
+	{
+		last = last->next;
+		count++;
+	}
+	// ft_printf("%i", count);
+	return (count);
 }
