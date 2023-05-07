@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/30 19:13:45 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/07 13:53:15 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/07 16:02:12 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int		ft_atoi(const char *str);
 t_node	*create_new_node(int number);
 t_node	*create_list_a(char **argv);
 int		print_list(t_node *head);
+int		is_correct_input(int argc, char **argv);
 int		input_is_number(char *argv);
 int		check_valid_input(char **argv);
 void	ft_error(char *str);

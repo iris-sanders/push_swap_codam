@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/24 15:38:26 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/07 13:50:21 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/07 16:44:52 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,12 @@ void	swap(t_node **head)
 	t_node	*first;
 	t_node	*second;
 	
-	//check if list is empty or has only 1 node
 	if ((*head) == NULL || (*head)->next == NULL)
 		exit(EXIT_FAILURE);
-	//save pointers to the first two nodes
 	first = (*head);
 	second = (*head)->next;
-	//swap the addresses in next to swap the nodes
 	first->next = second->next;
 	second->next = first;
-	//make head point to the first node again
 	(*head) = second;
 }
 
