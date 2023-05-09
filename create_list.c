@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/07 16:04:52 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/07 13:54:08 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/09 14:09:22 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_node	*create_new_node(int number)
 		return (NULL);
 	new_node->value = number;
 	new_node->next = NULL;
+	new_node->index = 0;
 	return (new_node);
 }
 

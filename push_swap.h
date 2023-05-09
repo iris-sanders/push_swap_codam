@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/30 19:13:45 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/07 17:22:47 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/09 16:11:51 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 typedef struct s_node {
 	int				value;
+	int				index;
 	struct s_node	*next;
 }	t_node;
 
@@ -48,5 +49,8 @@ void	reverse_rotate_a(t_node **head_a);
 void	reverse_rotate_b(t_node **head_b);
 void	reverse_rotate_a_and_b(t_node **head_a, t_node **head_b);
 int		count_nodes(t_node **head);
+void	index_presort(t_node **head_a);
+void		print_index_test(t_node **head_a);
+
 
 #endif

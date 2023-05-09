@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/30 19:07:40 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/07 17:22:34 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/09 16:09:45 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 		ft_error("ERROR: input not correct\n");
 	head_b = NULL;
 	head_a = create_list_a(argv);
-	count_nodes(&head_a);
+	print_index_test(&head_a);
 	// ft_printf("original head a\n");
 	// print_list(head_a);
 	// ft_printf("\n");
