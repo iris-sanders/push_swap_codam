@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/07 17:13:49 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/09 16:11:20 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/09 16:15:42 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ int	count_nodes(t_node **head)
 
 void	index_presort(t_node **head_a)
 {
+	int		i; //current node
 	int		amount_of_nodes;
 	t_node	*current_node;
 	t_node	*check_next_node;
-	int		i; //current node
 
 	i = 0;
 	amount_of_nodes = count_nodes(head_a);
