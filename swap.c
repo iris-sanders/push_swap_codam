@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/24 15:38:26 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/07 16:44:52 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/10 13:03:55 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	swap(t_node **head)
 {
 	t_node	*first;
 	t_node	*second;
-	
+
 	if ((*head) == NULL || (*head)->next == NULL)
 		exit(EXIT_FAILURE);
 	first = (*head);

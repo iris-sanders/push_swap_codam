@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/07 12:18:16 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/07 12:31:10 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/10 13:08:15 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	push(t_node **head_a, t_node **head_b)
 {
 	t_node	*temp;
-	
+
 	if ((*head_a) == NULL)
 		exit(EXIT_FAILURE);
 	temp = (*head_a)->next;

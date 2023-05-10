@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/07 17:13:49 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/09 22:22:58 by irissanders   ########   odam.nl         */
+/*   Updated: 2023/05/10 13:03:29 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	count_nodes(t_node **head)
 {
 	int		count;
 	t_node	*current_node;
-	
+
 	count = 0;
 	current_node = *head;
 	while (current_node != NULL)
@@ -24,13 +24,12 @@ int	count_nodes(t_node **head)
 		current_node = current_node->next;
 		count++;
 	}
-	// ft_printf("%i", count);
 	return (count);
 }
 
 void	index_presort(t_node **head_a)
 {
-	int		i; //current node
+	int		i;
 	int		amount_of_nodes;
 	t_node	*current_node;
 	t_node	*check_next_node;
@@ -61,7 +60,6 @@ void	print_index_test(t_node **head_a)
 
 	link = *head_a;
 	index_presort(&link);
-
 	while (link != NULL)
 	{
 		ft_printf("%i", link->index);
@@ -78,7 +76,7 @@ int	a_is_not_sorted(t_node **head_a, t_node **head_b)
 	if (node_b != NULL)
 		return (1);
 	current_node_a = *head_a;
-	while (current_node_a != NULL)
+	while (current_node_a != NULL && current_node_a->next != NULL)
 	{
 		if (current_node_a->value > current_node_a->next->value)
 			return (1);
@@ -88,11 +86,10 @@ int	a_is_not_sorted(t_node **head_a, t_node **head_b)
 	return (0);
 }
 
-
 void	sort(t_node **head_a, t_node **head_b)
 {
 	int	bit;
-	int	nodes_to_check; //nodes
+	int	nodes_to_check;
 
 	bit = 1;
 	while (a_is_not_sorted(head_a, head_b) == 1)
@@ -100,9 +97,9 @@ void	sort(t_node **head_a, t_node **head_b)
 		nodes_to_check = count_nodes(head_a);
 		while (nodes_to_check > 0)
 		{
-			if ((*head_a)->index & bit) //if it is true
+			if ((*head_a)->index & bit)
 				rotate_a(head_a);
-			else						//if it is false
+			else
 				push_b(head_a, head_b);
 			nodes_to_check--;
 		}

@@ -6,34 +6,11 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/18 13:10:40 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/07 16:38:57 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/10 12:54:58 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	is_correct_input(int argc, char **argv)
-{
-	int	i;
-	int	number;
-
-	i = 1;
-	if ((check_valid_input(argv) == 1)
-		&& (duplicate_check(argc, argv) == 1))
-		{
-			while (argv[i] != NULL)
-			{
-				number = atoi_min_max(argv[i]);
-				if (number == -1)
-					ft_error("ERROR: min/max overflow\n");
-				else
-					i++;
-			}
-		}
-	else
-		ft_error("ERROR: invalid input\n");
-	return (0);
-}
 
 //Loops over the array of strings and checks for number
 // "hallo" "hoi" "doei"

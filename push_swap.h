@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/30 19:13:45 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/09 22:27:02 by irissanders   ########   odam.nl         */
+/*   Updated: 2023/05/10 12:53:02 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ int		count_nodes(t_node **head);
 void	index_presort(t_node **head_a);
 int		a_is_not_sorted(t_node **head_a, t_node **head_b);
 void	sort(t_node **head_a, t_node **head_b);
-void		print_index_test(t_node **head_a);
-
+void	print_index_test(t_node **head_a);
 
 #endif
