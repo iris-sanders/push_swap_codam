@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/07 17:13:49 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/10 13:03:29 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/12 13:23:31 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ void	index_presort(t_node **head_a)
 			check_next_node = check_next_node->next;
 		}
 		current_node = current_node->next;
-		i++;
 		check_next_node = *head_a;
+		i++;
 	}
 }
 

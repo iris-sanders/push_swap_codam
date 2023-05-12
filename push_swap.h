@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/30 19:13:45 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/10 13:22:45 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/12 15:43:51 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_node	*create_list_a(char **argv);
 int		print_list(t_node *head);
 
 //error.c
-void	ft_error(char *str);
+void	ft_error(void);
 
 //input_check.c
 int		check_valid_input(char **argv);

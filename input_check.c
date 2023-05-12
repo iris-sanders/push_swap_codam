@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/18 13:10:40 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/10 12:54:58 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/12 15:44:31 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	check_valid_input(char **argv)
 		if (input_is_number(argv[i]))
 			i++;
 		else
-			ft_error("ERROR: not an integer\n");
+			ft_error();
 	}
 	return (1);
 }
@@ -43,7 +43,7 @@ int	input_is_number(char *argv)
 	while (ft_isdigit(argv[i]) && argv[i] != '\0')
 		i++;
 	if (!ft_isdigit(argv[i]) && argv[i] != '\0')
-		ft_error("ERROR: not an integer\n");
+		ft_error();
 	return (1);
 }
 
@@ -62,7 +62,7 @@ int	duplicate_check(int argc, char **argv)
 		while (j < argc)
 		{
 			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
-				ft_error("ERROR: duplicate found\n");
+				ft_error();
 			j++;
 		}
 		i++;

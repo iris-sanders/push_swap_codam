@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/07 13:32:46 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/10 13:07:07 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/12 15:49:00 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	reverse_rotate(t_node **head)
 	t_node	*last;
 
 	if (*head == NULL || (*head)->next == NULL)
-		exit(EXIT_FAILURE);
+		ft_error();
 	last = *head;
 	while (last->next != NULL)
 		last = last->next;
