@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/30 19:07:40 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/12 15:51:45 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/15 12:42:07 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(int argc, char **argv)
 	t_node	*head_b;
 
 	if (argc < 2)
-		return (0);
+		ft_error();
 	if (is_correct_input(argc, argv) != 0)
 		ft_error();
 	head_b = NULL;

@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/07 16:04:52 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/10 13:08:44 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/15 13:03:37 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_node	*create_new_node(int number)
 
 	new_node = malloc(sizeof(t_node));
 	if (new_node == NULL)
-		return (NULL);
+		ft_error();
 	new_node->value = number;
 	new_node->next = NULL;
 	new_node->index = 0;

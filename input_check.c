@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/18 13:10:40 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/12 15:44:31 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/15 12:54:03 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ int	input_is_number(char *argv)
 	if ((argv[i] == '+' || argv[i] == '-')
 		&& (argv[i] != '\0'))
 		i++;
+	if (argv[i] == '\0')
+		ft_error();
 	while (ft_isdigit(argv[i]) && argv[i] != '\0')
 		i++;
 	if (!ft_isdigit(argv[i]) && argv[i] != '\0')
