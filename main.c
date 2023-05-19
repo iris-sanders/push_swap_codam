@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/30 19:07:40 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/15 12:42:07 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/19 14:48:11 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,16 +46,17 @@ int	main(int argc, char **argv)
 		ft_error();
 	head_b = NULL;
 	head_a = create_list_a(argv);
-	// ft_printf("original head a\n");
-	// print_list(head_a);
-	// ft_printf("\n");
-	// ft_printf("original head b\n");
-	// print_list(head_b);
-	index_presort(&head_a);
-	sort(&head_a, &head_b);
-	// ft_printf("sorted list a\n");
-	// print_list(head_a);
-	// ft_printf("\n");
-	// ft_printf("check if b is empty\n");
-	// print_list(head_b);
+	ft_printf("original head a\n");
+	print_list(head_a);
+	ft_printf("\n");
+	ft_printf("original head b\n");
+	print_list(head_b);
+	small_sort(&head_a, &head_b);
+	// index_presort(&head_a);
+	// sort(&head_a, &head_b);
+	ft_printf("sorted list a\n");
+	print_list(head_a);
+	ft_printf("\n");
+	ft_printf("check if b is empty\n");
+	print_list(head_b);
 }

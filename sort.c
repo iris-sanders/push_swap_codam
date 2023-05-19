@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/07 17:13:49 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/12 13:23:31 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/19 15:12:25 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,5 +106,25 @@ void	sort(t_node **head_a, t_node **head_b)
 		bit = bit << 1;
 		while (*head_b != NULL)
 			push_a(head_b, head_a);
+	}
+}
+
+void	small_sort(t_node **head_a, t_node **head_b)
+{
+	t_node	*current_node;
+
+	current_node = *head_a;
+	while (a_is_not_sorted(head_a, head_b) == 1)
+	{
+		while (current_node != NULL)
+		{
+			if (current_node->value < current_node->next->value)
+				current_node = current_node->next;
+			if (current_node->value > current_node->next->value)
+			{
+				swap_a(&current_node);
+				current_node = current_node->next;
+			}
+		}
 	}
 }
