@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/07 17:13:49 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/22 16:08:24 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/23 15:30:07 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,22 @@ int	find_max_index(t_node **head_a)
 	return (max_index);
 }
 
+int	find_low_index(t_node **head_a)
+{
+	int		low_index;
+	t_node	*node_a;
+	
+	node_a = *head_a;
+	low_index = 2147483647;
+	while (node_a != NULL)
+	{
+		if (node_a->index < low_index)
+			low_index = node_a->index;
+		node_a = node_a->next;
+	}
+	return (low_index);
+}
+
 void	two_sort(t_node **head_a, t_node **head_b)
 {
 	t_node	*node_a;
@@ -132,40 +148,81 @@ void	two_sort(t_node **head_a, t_node **head_b)
 		swap_a(head_a);
 }
 
-void	three_sort(t_node **head_a)
+void	three_sort(t_node **head_a, t_node **head_b)
 {
 	t_node *node_a;
 	int		max_index;
 
 	node_a = *head_a;
 	max_index = find_max_index(head_a);
-	if (node_a->index == max_index)
-		rotate_a(head_a);
-	else if (node_a->next != NULL && node_a->next->index == max_index) //put in sort function next != NULL
-		reverse_rotate_a(head_a);
-	if (node_a->next != NULL && node_a->index > node_a->next->index)
-		swap_a(head_a);
+	while (a_is_not_sorted(head_a, head_b) == 1)
+	{
+		if (node_a->index == max_index)
+			rotate_a(head_a);
+		else if (node_a->next != NULL && node_a->next->index == max_index) //put in sort function next != NULL
+			reverse_rotate_a(head_a);
+		if (node_a->next != NULL && node_a->index > node_a->next->index)
+			swap_a(head_a);
 	}
-
-
-void	five_sort(t_node **head_a, t_node **head_b)
+}
+void	four_sort(t_node **head_a, t_node **head_b) //use *head
 {
 	t_node	*node_a;
+	int		low_index;
 	int		nodes_to_check;
-
+	
 	node_a = *head_a;
+	low_index = find_low_index(head_a);
 	nodes_to_check = node_count(head_a);
 	while (nodes_to_check > 0)
 	{
-		if (node_a->index == 0 || node_a->index == 1)
+		if (node_a->index == low_index)
+			push_b(head_a, head_b);
+		nodes_to_check--;
+	}
+	three_sort(head_a, head_b);
+	push_a(head_b, head_a);
+}
+
+void	five_sort(t_node **head_a, t_node **head_b)
+{
+	// t_node	*node_a;
+	int		nodes_to_check;
+
+	nodes_to_check = node_count(head_a);
+	ft_printf("HALLO");
+		// node_a = *head_a;
+	while (nodes_to_check > 0)
+	{
+		if ((*head_a)->index == 0 || (*head_a)->index == 1)
 			push_b(head_a, head_b);
 		else
 			rotate_a(head_a);
 		nodes_to_check--;
 	}
-	three_sort(head_a);
+	three_sort(head_a, head_b);
 	push_a(head_b, head_a);
 	push_a(head_b, head_a);
-	if (node_a->index > node_a->next->index)
+	if ((*head_a)->index > (*head_a)->next->index)
 		swap_a(head_a);
+}
+
+void	sort(t_node **head_a, t_node **head_b)
+{
+	int	number_of_nodes;
+
+	number_of_nodes = node_count(head_a);
+	if (number_of_nodes == 2)
+		two_sort(head_a, head_b);
+	if (number_of_nodes == 3)
+		three_sort(head_a, head_b);
+	if (number_of_nodes == 4)
+		four_sort(head_a, head_b);
+	if (number_of_nodes == 5)
+		five_sort(head_a, head_b);
+	// while (a_is_not_sorted(head_a, head_b) == 1)
+	// {
+	// 	// if (number_of_nodes > 5)
+	// 		radix_sort(head_a, head_b);
+	// }
 }
