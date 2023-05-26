@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/30 19:13:45 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/23 14:23:26 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/26 13:34:29 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	print_index_test(t_node **head_a);
 int		a_is_not_sorted(t_node **head_a, t_node **head_b);
 void	radix_sort(t_node **head_a, t_node **head_b);
 void	two_sort(t_node **head_a, t_node **head_b);
-void	three_sort(t_node **head_a, t_node **head_b);
+void	three_sort(t_node **head_a);
 int		find_max_index(t_node **head_a);
 void	five_sort(t_node **head_a, t_node **head_b);
 void	sort(t_node **head_a, t_node **head_b);

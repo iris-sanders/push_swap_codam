@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/07 17:13:49 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/23 15:30:07 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/26 14:40:12 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,12 @@ int	node_count(t_node **head)
 
 void	index_presort(t_node **head_a)
 {
-	int		i;
-	int		amount_of_nodes;
 	t_node	*node_a;
 	t_node	*check_next_node;
 
-	i = 0;
-	amount_of_nodes = node_count(head_a);
 	node_a = *head_a;
 	check_next_node = *head_a;
-	while (i < amount_of_nodes)
+	while (node_a != NULL)
 	{
 		while (check_next_node != NULL)
 		{
@@ -48,7 +44,6 @@ void	index_presort(t_node **head_a)
 		}
 		node_a = node_a->next;
 		check_next_node = *head_a;
-		i++;
 	}
 }
 
@@ -57,7 +52,6 @@ void	print_index_test(t_node **head_a)
 	t_node	*link;
 
 	link = *head_a;
-	index_presort(&link);
 	while (link != NULL)
 	{
 		ft_printf("%i", link->index);
@@ -84,7 +78,7 @@ int	a_is_not_sorted(t_node **head_a, t_node **head_b)
 	return (0);
 }
 
-void	radix_sort(t_node **head_a, t_node **head_b)
+void	radix_sort(t_node **head_a, t_node **head_b) //doesnt work with 3? 
 {
 	int	bit;
 	int	nodes_to_check;
@@ -148,23 +142,36 @@ void	two_sort(t_node **head_a, t_node **head_b)
 		swap_a(head_a);
 }
 
-void	three_sort(t_node **head_a, t_node **head_b)
+void	three_sort(t_node **head_a)
 {
 	t_node *node_a;
 	int		max_index;
-
+		
 	node_a = *head_a;
-	max_index = find_max_index(head_a);
-	while (a_is_not_sorted(head_a, head_b) == 1)
-	{
-		if (node_a->index == max_index)
-			rotate_a(head_a);
-		else if (node_a->next != NULL && node_a->next->index == max_index) //put in sort function next != NULL
-			reverse_rotate_a(head_a);
-		if (node_a->next != NULL && node_a->index > node_a->next->index)
-			swap_a(head_a);
-	}
+	max_index = find_max_index(&node_a);
+	if ((*head_a)->index == max_index)
+		rotate_a(head_a);
+	else if ((*head_a)->next->index == max_index)
+		reverse_rotate_a(head_a);
+	if (!(*head_a)->next)
+		return ;
+	if ((*head_a)->index > (*head_a)->next->index)
+		swap_a(head_a);
 }
+	
+	// if (node_a->index < node_a->next->index && node_a->next->index > node_a->next->next->index)
+	// 	swap_a(head_a);
+	// 	rotate_a(head_a);
+	// if (node_a->index > node_a->next->index && node_a->next->index < node_a->next->next->index)
+	// 	swap_a(head_a);
+	// if (node_a->index < node_a->next->index && node_a->next->index > node_a->next->next->index)
+	// 	reverse_rotate_a(head_a);
+	// if (node_a->index > node_a->next->index && node_a->next->index < node_a->next->next->index)
+	// 	rotate_a(head_a);
+	// if (node_a->index > node_a->next->index && node_a->next->index > node_a->next->next->index)
+	// 	swap_a(head_a);
+	// 	reverse_rotate_a(head_a);
+	
 void	four_sort(t_node **head_a, t_node **head_b) //use *head
 {
 	t_node	*node_a;
@@ -180,7 +187,7 @@ void	four_sort(t_node **head_a, t_node **head_b) //use *head
 			push_b(head_a, head_b);
 		nodes_to_check--;
 	}
-	three_sort(head_a, head_b);
+	three_sort(head_a);
 	push_a(head_b, head_a);
 }
 
@@ -200,7 +207,7 @@ void	five_sort(t_node **head_a, t_node **head_b)
 			rotate_a(head_a);
 		nodes_to_check--;
 	}
-	three_sort(head_a, head_b);
+	three_sort(head_a);
 	push_a(head_b, head_a);
 	push_a(head_b, head_a);
 	if ((*head_a)->index > (*head_a)->next->index)
@@ -215,7 +222,7 @@ void	sort(t_node **head_a, t_node **head_b)
 	if (number_of_nodes == 2)
 		two_sort(head_a, head_b);
 	if (number_of_nodes == 3)
-		three_sort(head_a, head_b);
+		three_sort(head_a);
 	if (number_of_nodes == 4)
 		four_sort(head_a, head_b);
 	if (number_of_nodes == 5)
