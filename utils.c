@@ -1,20 +1,65 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   error.c                                            :+:    :+:            */
+/*   utils.c                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/19 14:01:31 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/12 13:53:53 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/28 17:09:01 by irissanders   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//exit error. prints string with name of error
 void	ft_error(void)
 {
 	ft_putstr_fd("Error\n", STDERR_FILENO);
 	exit(EXIT_FAILURE);
+}
+
+int	node_count(t_node **head)
+{
+	int		count;
+	t_node	*node_a;
+
+	count = 0;
+	node_a = *head;
+	while (node_a != NULL)
+	{
+		node_a = node_a->next;
+		count++;
+	}
+	return (count);
+}
+
+int	find_max_index(t_node **head_a)
+{
+	int		max_index;
+	t_node	*node_a;
+
+	node_a = *head_a;
+	max_index = 0;
+	while (node_a != NULL)
+	{
+		if (node_a->index > max_index)
+			max_index = node_a->index;
+		node_a = node_a->next;
+	}
+	return (max_index);
+}
+
+int	a_is_not_sorted(t_node **head_a)
+{
+	t_node	*node_a;
+
+	node_a = *head_a;
+	while (node_a != NULL && node_a->next != NULL)
+	{
+		if (node_a->value > node_a->next->value)
+			return (1);
+		else
+			node_a = node_a->next;
+	}
+	return (0);
 }

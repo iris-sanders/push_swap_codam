@@ -6,19 +6,19 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/07 13:19:45 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/22 15:29:37 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/27 17:07:20 by irissanders   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate(t_node **head)
+int	rotate(t_node **head)
 {
 	t_node	*last;
 	t_node	*first;
 
 	if (*head == NULL || (*head)->next == NULL)
-		ft_error();
+		return (0);
 	last = *head;
 	while (last->next != NULL)
 	{
@@ -28,18 +28,19 @@ void	rotate(t_node **head)
 	*head = (*head)->next;
 	first->next = NULL;
 	last->next = first;
+	return (1);
 }
 
 void	rotate_a(t_node **head_a)
 {
-	rotate(head_a);
-	ft_printf("ra\n");
+	if (rotate(head_a))
+		ft_printf("ra\n");
 }
 
 void	rotate_b(t_node **head_b)
 {
-	rotate(head_b);
-	ft_printf("rb\n");
+	if (rotate(head_b))
+		ft_printf("rb\n");
 }
 
 void	rotate_a_and_b(t_node **head_a, t_node **head_b)

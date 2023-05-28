@@ -6,7 +6,7 @@
 #    By: isanders <isanders@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/04/03 16:19:13 by isanders      #+#    #+#                  #
-#    Updated: 2023/05/07 17:22:59 by isanders      ########   odam.nl          #
+#    Updated: 2023/05/28 17:04:46 by irissanders   ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,17 +14,18 @@ NAME = push_swap
 SRC = 	main.c \
 		input_check.c \
 		create_list.c \
-		error.c \
+		utils.c \
 		swap.c \
 		push.c \
 		rotate.c \
 		reverse_rotate.c \
 		sort.c \
+		tests.c \
 		
 HEADER = -I ./libft/libft.h -I ./libft/ft_printf/ft_printf.h
 
 OFILES = $(SRC:.c=.o)
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 CC = gcc
 
 LIBFT = ./libft/libft.a

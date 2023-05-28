@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/30 19:07:40 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/26 14:38:03 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/28 16:52:08 by irissanders   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,7 @@ int	main(int argc, char **argv)
 	ft_printf("original head b\n");
 	print_list(head_b);
 	index_presort(&head_a);
-	print_index_test(&head_a);
-	radix_sort(&head_a, &head_b);
-	// sort(&head_a, &head_b);
-	// three_sort(&head_a);
-	// sort(&head_a, &head_b);
+	sort(&head_a, &head_b);
 	ft_printf("sorted list a\n");
 	print_list(head_a);
 	ft_printf("\n");
