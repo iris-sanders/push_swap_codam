@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/08 16:11:12 by isanders      #+#    #+#                 */
-/*   Updated: 2022/11/25 15:43:44 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/28 19:05:06 by irissanders   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int	index;
+	int	i;
 
-	index = 0;
-	while (s[index] != '\0')
+	i = 0;
+	while (s[i] != '\0')
 	{
-		ft_putchar_fd(s[index], fd);
-		index++;
+		ft_putchar_fd(s[i], fd);
+		i++;
 	}
 }
-
-// Outputs the string ’s’ to the given file descriptor.

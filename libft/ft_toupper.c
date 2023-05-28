@@ -6,7 +6,7 @@
 /*   By: irissanders <irissanders@student.codam.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/24 20:24:06 by irissanders   #+#    #+#                 */
-/*   Updated: 2022/11/25 15:08:53 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/28 19:10:02 by irissanders   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,3 @@ int	ft_toupper(int c)
 	c = c - 32;
 	return (c);
 }
-
-/*int	main(void)
-{
-	printf("%c", ft_toupper('a'));
-}*/
-
-// converts a lower-case letter to the 
-// corresponding upper-case letter.

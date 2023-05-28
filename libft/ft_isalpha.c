@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/11 09:45:14 by isanders      #+#    #+#                 */
-/*   Updated: 2022/11/25 14:23:34 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/28 19:10:10 by irissanders   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,3 @@ int	ft_isalpha(int c)
 	else
 		return (0);
 }
-
-/*int	main(void)
-{
-	printf("%d", ft_isalpha('1'));
-}*/
-
-// Tests for any character for which isupper or islower is true

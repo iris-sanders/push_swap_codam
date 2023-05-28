@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 19:39:09 by isanders      #+#    #+#                 */
-/*   Updated: 2023/04/12 16:56:00 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/28 18:58:32 by irissanders   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,3 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-
-/*int	main(void)
-{
-	char	s[] = "hallo";
-
-	ft_bzero(s, 3);
-	printf("%s", s);
-}*/
-
-// als index kleiner is dan n
-// index opvullen met \0

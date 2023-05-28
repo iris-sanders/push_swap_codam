@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/08 15:12:41 by isanders      #+#    #+#                 */
-/*   Updated: 2022/11/25 15:47:08 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/27 16:39:17 by irissanders   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ static void	*ft_free(char **ptr)
 	int	index;
 
 	index = 0;
-	while (ptr[index] != '\0')
+	while (ptr[index] != NULL)
 	{
 		free(ptr[index]);
 		index++;

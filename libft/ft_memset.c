@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 17:21:24 by isanders      #+#    #+#                 */
-/*   Updated: 2022/11/25 14:27:14 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/28 19:10:26 by irissanders   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,13 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned long	index;
+	unsigned long	i;
 
-	index = 0;
-	while (index < len)
+	i = 0;
+	while (i < len)
 	{
-		((unsigned char *)b)[index] = ((unsigned char)c);
-		index++;
+		((unsigned char *)b)[i] = ((unsigned char)c);
+		i++;
 	}
 	return (b);
 }
-
-/*int	main(void)
-{
-	char	b[] = "hallo";
-
-	ft_memset(b, '$', 3);
-	printf("%s", b);
-}*/
-
-// writes len bytes of value c to the string b

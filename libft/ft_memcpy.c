@@ -6,7 +6,7 @@
 /*   By: irissanders <irissanders@student.codam.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/13 12:24:55 by irissanders   #+#    #+#                 */
-/*   Updated: 2022/11/25 14:25:34 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/28 19:01:36 by irissanders   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,15 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t	index;
+	size_t	i;
 
-	index = 0;
+	i = 0;
 	if (dst == src)
-	{
 		return (dst);
-	}
-	while (index < n)
+	while (i < n)
 	{
-		((unsigned char *)dst)[index] = ((unsigned char *)src)[index];
-		index++;
+		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+		i++;
 	}
 	return (dst);
 }
-
-// int main(void)
-// {
-// 	char	dest[] = "goodbye";
-// 	char    source[] = "hello";
-
-// 	memcpy(NULL, NULL, 3);
-// 	// printf("%s", dest);
-// 	printf("%s", ft_memcpy(NULL, NULL, 3));
-// }
-
-// Copies n bytes from memory area src to memory area dst

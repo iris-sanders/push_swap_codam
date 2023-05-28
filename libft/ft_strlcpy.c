@@ -6,7 +6,7 @@
 /*   By: irissanders <irissanders@student.codam.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/24 14:48:24 by irissanders   #+#    #+#                 */
-/*   Updated: 2022/10/31 15:59:58 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/28 19:07:07 by irissanders   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	dst[index2] = '\0';
 	return (index);
 }
-
-/*int main(void)
-{
-	char    dest[] = "goodbye";
-	char    source[] = "hello";
-
-	ft_strlcpy(dest, source, 3);
-	printf("%s", dest);
-}*/

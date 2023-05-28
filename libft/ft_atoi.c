@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/02 12:52:55 by isanders      #+#    #+#                 */
-/*   Updated: 2023/04/19 16:24:01 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/28 18:58:11 by irissanders   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,3 @@ int	ft_atoi(const char *str)
 	}
 	return (number * neg_number);
 }
-
-// int	main(void)
-// {
-// 	char	str[] = "  325";
-
-// 	printf("%d\n", ft_atoi(str));
-// 	printf("%d\n", atoi(str));
-// }
-
-// index + 1, getal na +/- moet een getal zijn

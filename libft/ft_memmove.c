@@ -6,7 +6,7 @@
 /*   By: irissanders <irissanders@student.codam.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/13 12:48:14 by irissanders   #+#    #+#                 */
-/*   Updated: 2022/11/25 16:49:16 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/28 19:01:53 by irissanders   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	index;
+	size_t	i;
 
-	index = 0;
+	i = 0;
 	if (dst == src)
-	{
 		return (dst);
-	}
 	if (dst > src)
 	{
 		while (len > 0)
@@ -30,21 +28,10 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		}
 		return (dst);
 	}
-	while (index < len)
+	while (i < len)
 	{
-		((unsigned char *)dst)[index] = ((unsigned char *)src)[index];
-		index++;
+		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+		i++;
 	}
 	return (dst);
 }
-
-/*int main(void)
-{
-	char    dest[] = "goodbye";
-	char    source[] = "hello";
-
-	ft_memmove(dest, source, 3);
-	printf("%s", dest);
-}*/
-
-// copies len bytes from string src to string dst

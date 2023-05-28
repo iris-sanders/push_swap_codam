@@ -6,7 +6,7 @@
 /*   By: irissanders <irissanders@student.codam.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/15 22:21:36 by irissanders   #+#    #+#                 */
-/*   Updated: 2022/11/25 15:51:23 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/28 19:00:11 by irissanders   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ static int	number_count(int n)
 
 	counter = 0;
 	if (n == 0)
-	{
 		counter++;
-	}
 	if (n < 0)
 	{
 		counter++;
@@ -36,7 +34,7 @@ static int	number_count(int n)
 
 char	*ft_itoa(int n)
 {
-	int		index;
+	int		i;
 	char	*str;
 
 	if (n == -2147483648)
@@ -44,11 +42,9 @@ char	*ft_itoa(int n)
 	str = ft_calloc (number_count(n) + 1, sizeof(char));
 	if (str == NULL)
 		return (NULL);
-	index = number_count(n) - 1;
+	i = number_count(n) - 1;
 	if (n == 0)
-	{
 		str[0] = '0';
-	}
 	if (n < 0)
 	{
 		str[0] = '-';
@@ -56,35 +52,9 @@ char	*ft_itoa(int n)
 	}
 	while (n > 0)
 	{
-		str[index] = n % 10 + '0';
+		str[i] = n % 10 + '0';
 		n = n / 10;
-		index--;
+		i--;
 	}
 	return (str);
 }
-
-// int	main(void)
-// {
-// 	int	n;
-
-// 	n = -25450;
-// 	printf("%s\n", ft_itoa(n));
-// }
-
-// number_count
-// n == 0 -> counter++ -> 0 getal is ook character 
-// die je wil tellen
-// eerste counter++ -> min getal is ook character
-// n * -1 -> negatief getal wordt positief zodat het 
-// de while loop in gaat.
-// index = character_count(n) - 1; --> -1 voor \0 character
-
-// itoa
-// if n==0 ptr[0] ='0' --> if first num is 0 --> 
-// first index of ptr is '0'
-// if n < 0 --> is negatief getal, daarom eerste index '-', 
-//daarna n*-1 zodat getal positief wordt
-// .    daardoor kan het getal in volgende while loop
-// return (ft_strdup("-2147483648")); --> als dat het 
-// getal is maak er een string van (hardcoded)
-// index -1 --> 3 woorden maar index begint bij 0

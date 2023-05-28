@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/15 14:18:35 by isanders      #+#    #+#                 */
-/*   Updated: 2022/11/25 14:57:54 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/28 19:06:20 by irissanders   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,12 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int	index;
+	int	i;
 
-	index = 0;
-	while (s[index] != '\0')
+	i = 0;
+	while (s[i] != '\0')
 	{
-		f(index, &s[index]);
-		index++;
+		f(i, &s[i]);
+		i++;
 	}
 }
-
-// Applies the function ’f’ on each character of
-// the string passed as argument, passing its index
-// as first argument.  Each character is passed by
-// address to ’f’ to be modified if necessary.

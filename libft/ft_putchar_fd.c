@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/08 16:03:27 by isanders      #+#    #+#                 */
-/*   Updated: 2022/11/25 15:48:41 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/28 19:03:14 by irissanders   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,3 @@ void	ft_putchar_fd(char c, int fd)
 {
 	write (fd, &c, 1);
 }
-
-// Outputs the character ’c’ to the given file descriptor

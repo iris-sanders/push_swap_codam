@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 16:36:01 by isanders      #+#    #+#                 */
-/*   Updated: 2022/10/24 12:48:43 by irissanders   ########   odam.nl         */
+/*   Updated: 2023/05/28 19:09:45 by irissanders   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int	index;
+	int	i;
 
-	index = 0;
-	while (s[index] != '\0')
-	{
-		index++;
-	}
-	return (index);
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }
-
-/*int	main(void)
-{
-	printf("%zu", ft_strlen("hello"));
-	printf("%zu", strlen("hello"));
-}*/
