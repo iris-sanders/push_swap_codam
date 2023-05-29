@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/08 15:12:41 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/27 16:39:17 by irissanders   ########   odam.nl         */
+/*   Updated: 2023/05/29 15:41:15 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ static char	*make_word(char *s, char c)
 	return (ptr);
 }
 
-static void	*ft_free(char **ptr)
+void	*ft_free(char **ptr)
 {	
 	int	index;
 

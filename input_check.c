@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/18 13:10:40 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/15 12:54:03 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/29 18:54:21 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	check_valid_input(char **argv)
 {
 	int	i;
 
-	i = 1;
+	i = 0;
 	while (argv[i] != NULL)
 	{
 		if (input_is_number(argv[i]))
@@ -52,16 +52,16 @@ int	input_is_number(char *argv)
 //change arguments into integers
 //easier to check duplicates with + - etc.
 //checks if the next argument is a duplicate with i & j
-int	duplicate_check(int argc, char **argv)
+int	duplicate_check(char **argv)
 {
 	int	i;
 	int	j;
 
-	i = 1;
-	while (i < argc)
+	i = 0;
+	while (argv[i] != NULL)
 	{
 		j = i + 1;
-		while (j < argc)
+		while (argv[j] != NULL )
 		{
 			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
 				ft_error();

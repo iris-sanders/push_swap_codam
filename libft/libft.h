@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/31 13:29:21 by isanders      #+#    #+#                 */
-/*   Updated: 2023/04/11 15:31:25 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/29 15:41:23 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int		ft_toupper(int c);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	ft_bzero(void *s, size_t n);
 int		ft_isalnum(int c);
+void	*ft_free(char **ptr);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);

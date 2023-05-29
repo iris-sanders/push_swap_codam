@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/30 19:13:45 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/28 17:15:35 by irissanders   ########   odam.nl         */
+/*   Updated: 2023/05/29 18:52:03 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "libft/ft_printf/ft_printf.h"
 # include "libft/libft.h"
 # include <stdlib.h>
+# include <limits.h>
 
 typedef struct s_node {
 	int				value;
@@ -24,7 +25,7 @@ typedef struct s_node {
 }	t_node;
 
 //main.c 
-int		is_correct_input(int argc, char **argv);
+int		is_correct_input(char **argv);
 
 //tests.c
 int		print_list(t_node *head);
@@ -39,11 +40,12 @@ void	ft_error(void);
 int		node_count(t_node **head);
 int		find_max_index(t_node **head_a);
 int		a_is_not_sorted(t_node **head_a);
+void	free_a_and_b(t_node	*head_a, t_node	*head_b);
 
 //input_check.c
 int		check_valid_input(char **argv);
 int		input_is_number(char *argv);
-int		duplicate_check(int argc, char **argv);
+int		duplicate_check(char **argv);
 int		atoi_min_max(char *str);
 
 //push.c

@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/19 14:01:31 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/28 17:09:01 by irissanders   ########   odam.nl         */
+/*   Updated: 2023/05/29 18:58:24 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,22 @@ int	a_is_not_sorted(t_node **head_a)
 			node_a = node_a->next;
 	}
 	return (0);
+}
+
+void	free_a_and_b(t_node	*head_a, t_node	*head_b)
+{
+	t_node	*temp;
+
+	while (head_a != NULL)
+	{
+		temp = head_a;
+		head_a = head_a->next;
+		free(temp);
+	}
+	while (head_b != NULL)
+	{
+		temp = head_b;
+		head_b = head_b->next;
+		free(temp);
+	}
 }
