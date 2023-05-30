@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/18 13:10:40 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/29 18:54:21 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/30 13:52:39 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,6 @@ int	atoi_min_max(char *str)
 		i++;
 	}
 	if (min_max_int(number * neg_number) == 1)
-		return (-1);
+		return (0);
 	return (number * neg_number);
 }

@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/07 16:04:52 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/29 16:56:39 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/30 13:52:51 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,30 @@ t_node	*create_list_a(char **argv)
 		i++;
 	}
 	return (head_a);
+}
+
+void	initialize(int argc, char **argv, t_node **head_a, t_node **head_b)
+{
+	char	**split_argv;
+
+	if (argc < 2)
+		ft_error();
+	if (argc == 2)
+	{
+		split_argv = ft_split(argv[1], ' ');
+		if (split_argv == NULL)
+			ft_error();
+		if (is_correct_input(split_argv) != 0)
+			ft_error();
+		*head_b = NULL;
+		*head_a = create_list_a(split_argv);
+		ft_free(split_argv);
+	}
+	else
+	{
+		if (is_correct_input(argv +1) != 0)
+			ft_error();
+		*head_b = NULL;
+		*head_a = create_list_a(argv +1);
+	}
 }

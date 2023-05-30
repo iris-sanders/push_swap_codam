@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/07 17:13:49 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/29 19:13:46 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/30 13:55:34 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,8 @@ void	five_sort(t_node **head_a, t_node **head_b)
 		three_sort(head_a);
 		push_a(head_b, head_a);
 		push_a(head_b, head_a);
-		if (node_a != NULL && node_a->next != NULL && node_a->index > node_a->next->index)
+		if ((node_a != NULL) && (node_a->next != NULL)
+			&& (node_a->index > node_a->next->index))
 			swap_a(head_a);
 	}
 }

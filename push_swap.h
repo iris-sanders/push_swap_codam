@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/30 19:13:45 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/29 18:52:03 by isanders      ########   odam.nl         */
+/*   Updated: 2023/05/30 13:51:40 by isanders      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include "libft/ft_printf/ft_printf.h"
 # include "libft/libft.h"
 # include <stdlib.h>
-# include <limits.h>
 
 typedef struct s_node {
 	int				value;
@@ -34,6 +33,7 @@ void	print_index_test(t_node **head_a);
 //create_list.c
 t_node	*create_new_node(int number);
 t_node	*create_list_a(char **argv);
+void	initialize(int argc, char **argv, t_node **head_a, t_node **head_b);
 
 //utils.c
 void	ft_error(void);
