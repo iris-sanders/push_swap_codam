@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/06 13:01:08 by isanders      #+#    #+#                 */
-/*   Updated: 2023/04/20 13:56:13 by isanders      ########   odam.nl         */
+/*   Updated: 2023/07/05 18:14:50 by lmuzio        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	ft_printf(const char *s, ...)
 		}
 		else
 			length += ft_putchar(s[index]);
-			index++;
+		index++;
 	}
 	va_end(args);
 	return (length);

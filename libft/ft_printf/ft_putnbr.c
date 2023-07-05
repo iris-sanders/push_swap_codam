@@ -6,7 +6,7 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/07 13:35:13 by isanders      #+#    #+#                 */
-/*   Updated: 2023/03/28 15:04:43 by isanders      ########   odam.nl         */
+/*   Updated: 2023/07/05 18:16:03 by lmuzio        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_putunbr(unsigned long long n, unsigned int base, int uporlow)
 		length += ft_putunbr(n / base, base, uporlow);
 		n = n % base;
 	}
-	if (n >= 0 && n <= 9)
+	if (n <= 9)
 	{
 		length += ft_putchar(n + '0');
 	}

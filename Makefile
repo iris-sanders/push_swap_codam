@@ -6,11 +6,20 @@
 #    By: isanders <isanders@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/04/03 16:19:13 by isanders      #+#    #+#                  #
-#    Updated: 2023/05/29 19:05:45 by isanders      ########   odam.nl          #
+#    Updated: 2023/07/05 18:38:22 by lmuzio        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+
 NAME = push_swap
+
+HEADER = -I ./incl -I ./libft -I ./libft/ft_printf
+
+OBJ_DIR = ./src/obj
+SRC_DIR = ./src
+
 SRC = 	main.c \
 		input_check.c \
 		create_list.c \
@@ -22,26 +31,30 @@ SRC = 	main.c \
 		sort.c \
 		tests.c \
 		
-HEADER = -I ./libft/libft.h -I ./libft/ft_printf/ft_printf.h
-
-OFILES = $(SRC:.c=.o)
-CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
-CC = gcc
+OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 
 LIBFT = ./libft/libft.a
 PRINTF = ./libft/ft_printf/libftprintf.a
 
 all: $(NAME)
 
-make comp: all clean
+$(NAME): $(OBJ) $(LIBFT) $(PRINTF)
+	$(CC) $^ $(HEADER) $(CFLAGS) -o $(NAME)
 
-$(NAME): $(OFILES)
-	$(MAKE) -C ./libft
-	$(MAKE) -C ./libft/ft_printf
-	$(CC) $(OFILES) $(HEADER) $(PRINTF) $(LIBFT) $(CFLAGS) -o $(NAME) 
+$(PRINTF):
+	make -C ./libft/ft_printf
+
+$(LIBFT):
+	make -C ./libft
+
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
+	$(CC) -c $< $(HEADER) $(CFLAGS) -o $@ 
 
 clean:
-	rm -rf $(OFILES)
+	rm -rf $(OBJ_DIR)
 	$(MAKE) clean -C ./libft/ft_printf
 	$(MAKE) clean -C ./libft
 

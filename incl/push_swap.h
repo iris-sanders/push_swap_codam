@@ -6,15 +6,15 @@
 /*   By: isanders <isanders@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/30 19:13:45 by isanders      #+#    #+#                 */
-/*   Updated: 2023/05/30 13:51:40 by isanders      ########   odam.nl         */
+/*   Updated: 2023/07/05 18:11:20 by lmuzio        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft/ft_printf/ft_printf.h"
-# include "libft/libft.h"
+# include "ft_printf.h"
+# include "libft.h"
 # include <stdlib.h>
 
 typedef struct s_node {
